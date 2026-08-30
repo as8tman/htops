@@ -10,8 +10,19 @@
   overflow-y: auto;
 }
 
-.hero {
+.heroWrap {
   margin: 0 var(--spacing-medium) var(--spacing-xsmall);
+  overflow: hidden;
+  border-radius: var(--radius-large);
+}
+
+.heroTrack {
+  display: flex;
+  transition: transform 0.45s ease;
+}
+
+.hero {
+  margin: 0;
   background: var(--surface-neutral-1);
   border-radius: var(--radius-large);
   padding: var(--spacing-medium);
@@ -20,6 +31,8 @@
   gap: var(--spacing-xsmall);
   min-height: 120px;
   box-sizing: border-box;
+  flex: 0 0 100%;
+  width: 100%;
 }
 
 .heroText {
@@ -110,10 +123,20 @@
   box-sizing: border-box;
   text-align: left;
   font-family: inherit;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
 }
 
 .eventCard:hover {
   background: var(--surface-neutral-2);
+}
+
+.eventCard:active {
+  background: var(--surface-neutral-3);
+}
+
+.eventCard:hover .eventChevron {
+  transform: translateX(2px);
+  color: var(--text-primary);
 }
 
 .eventText {
@@ -127,11 +150,20 @@
 .eventChevron {
   flex-shrink: 0;
   color: var(--text-body-3);
+  transition: transform 0.15s ease, color 0.15s ease;
 }
 
 .fixedFooter {
   flex-shrink: 0;
+  margin-bottom: 69px;
   padding: var(--spacing-small) var(--spacing-medium);
   background: var(--surface-neutral);
   box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.06);
 }
+
+@media (min-width: 480px) {
+  .fixedFooter {
+    margin-bottom: calc(69px + var(--spacing-large));
+  }
+}
+

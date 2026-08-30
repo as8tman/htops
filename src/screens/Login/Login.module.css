@@ -44,7 +44,18 @@
   font-size: var(--font-size-body2);
   color: var(--text-body-2);
   text-decoration: underline;
-  padding: 0;
+  padding: var(--spacing-xxxsmall) var(--spacing-xxsmall);
+  border-radius: var(--radius-small);
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.linkButton:hover {
+  color: var(--text-primary);
+  background: var(--state-dark-1);
+}
+
+.linkButton:active {
+  background: var(--state-dark-2);
 }
 
 .linkDivider {
@@ -53,3 +64,4 @@
   background: var(--border-4);
   display: inline-block;
 }
+

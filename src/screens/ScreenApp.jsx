@@ -28,13 +28,13 @@ export default function ScreenApp({ onShowShowcase }) {
       <div className={styles.viewport}>
         <Screen onNavigate={setScreen} />
       </div>
-      {onShowShowcase && (
+      {/* {onShowShowcase && (
         <div className={styles.showcaseLink}>
           <Button variant="neutral1" size="small" onClick={onShowShowcase}>
             컴포넌트 쇼케이스 보기
           </Button>
         </div>
-      )}
+      )} */}
     </div>
   );
 }

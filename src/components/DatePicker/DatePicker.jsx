@@ -74,9 +74,21 @@ export default function DatePicker({
   const [viewYear, setViewYear] = useState(selected.getFullYear());
   const [viewMonth, setViewMonth] = useState(selected.getMonth());
   const [open, setOpen] = useState(false);
+  const [autoPlace, setAutoPlace] = useState('bottom');
 
   const wrapRef = useRef(null);
   const popupRef = useRef(null);
+
+  useEffect(() => {
+    if (open && wrapRef.current) {
+      const fieldRect = wrapRef.current.getBoundingClientRect();
+      const spaceBelow = window.innerHeight - fieldRect.bottom;
+      const spaceAbove = fieldRect.top;
+      setAutoPlace(spaceBelow < spaceAbove ? 'top' : 'bottom');
+    } else {
+      setAutoPlace('bottom');
+    }
+  }, [open]);
 
   useEffect(() => {
     function handleClickOutside(e) {
@@ -217,11 +229,20 @@ export default function DatePicker({
             />
           </svg>
         </button>
-      </div>
 
-      {open && !disabled && (
-        <div className={styles.popup} role="dialog" aria-label="달력 날짜 선택" ref={popupRef}>
-          <div className={styles.popupHeader}>
+        {open && !disabled && (
+          <div
+            className={[
+              styles.popup,
+              autoPlace === 'top' ? styles.popupTop : styles.popupBottom,
+            ]
+              .filter(Boolean)
+              .join(' ')}
+            role="dialog"
+            aria-label="달력 날짜 선택"
+            ref={popupRef}
+          >
+            <div className={styles.popupHeader}>
             <button
               type="button"
               className={styles.nav}
@@ -302,9 +323,10 @@ export default function DatePicker({
                 </button>
               );
             })}
+            </div>
           </div>
-        </div>
       )}
+      </div>
 
       {hasError ? (
         <div className={styles.bottomRow}>

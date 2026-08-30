@@ -8,6 +8,7 @@
 .content {
   flex: 1 1 auto;
   overflow-y: auto;
+  padding-bottom: calc(var(--spacing-xlarge) + 48px);
 }
 
 .profile {
@@ -61,6 +62,18 @@
   cursor: pointer;
   color: rgba(255, 255, 255, 0.7);
   font-family: inherit;
+  transition: color 0.15s ease, opacity 0.15s ease;
+  padding: var(--spacing-xxxsmall);
+  border-radius: var(--radius-small);
+}
+
+.statusLink:hover {
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.statusLink:active {
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .caption {
@@ -83,3 +96,5 @@
   flex-direction: column;
   gap: var(--spacing-xsmall);
 }
+
+

@@ -1,0 +1,69 @@
+.logo {
+  font-size: var(--font-size-title4);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+}
+
+.menu {
+  padding: 0 var(--spacing-medium);
+}
+
+.group {
+  margin-bottom: var(--spacing-large);
+}
+
+.groupTitle {
+  font-size: var(--font-size-caption);
+  color: var(--text-body-3);
+  margin-bottom: var(--spacing-xxsmall);
+  padding: 0 var(--spacing-xsmall);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-xsmall);
+  width: 100%;
+  padding: var(--spacing-small) var(--spacing-xsmall);
+  border: none;
+  background: transparent;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body1);
+  font-weight: var(--weight-light);
+  color: var(--text-body);
+  text-align: left;
+  cursor: pointer;
+  border-radius: var(--radius-medium);
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.item:hover:not(:disabled) {
+  background: var(--state-dark-1);
+  color: var(--text-primary);
+}
+
+.item:active:not(:disabled) {
+  background: var(--state-dark-2);
+}
+
+.item:disabled {
+  color: var(--text-neutral-2);
+  cursor: default;
+}
+
+.itemLabel {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: var(--text-body-3);
+}

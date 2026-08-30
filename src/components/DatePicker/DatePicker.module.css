@@ -102,13 +102,22 @@
 .popup {
   position: absolute;
   z-index: 100;
-  margin-top: var(--spacing-xxsmall);
+  left: 0;
   width: 280px;
+  max-width: 100%;
   background: var(--surface-neutral);
   border: 1px solid var(--border-3);
   border-radius: var(--radius-large);
   box-shadow: var(--shadow-large);
   padding: var(--spacing-small);
+}
+
+.popupBottom {
+  top: calc(100% + var(--spacing-xxsmall));
+}
+
+.popupTop {
+  bottom: calc(100% + var(--spacing-xxsmall));
 }
 
 .popupHeader {

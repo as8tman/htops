@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { NavBar, IconButton, Stepper, Button, BottomNavigation, Texts } from '../../components';
 import { iconBell, iconMenu, iconChevronRight, BOTTOM_NAV_ITEMS } from '../icons.jsx';
+import AppMenuDrawer from '../AppMenuDrawer.jsx';
 import { APPLICATION_STEPS, CURRENT_STEP_INDEX, CURRENT_STEP_CAPTION } from '../applicationSteps.js';
 import styles from './MainApplicant.module.css';
 
@@ -9,6 +11,8 @@ const SIDE_JOBS = [
 ];
 
 export default function MainApplicant({ onNavigate }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className={styles.screen}>
       <NavBar
@@ -16,7 +20,7 @@ export default function MainApplicant({ onNavigate }) {
         actions={
           <>
             <IconButton icon={iconBell} variant="ghost" aria-label="알림" />
-            <IconButton icon={iconMenu} variant="ghost" aria-label="전체 메뉴" />
+            <IconButton icon={iconMenu} variant="ghost" aria-label="전체 메뉴" onClick={() => setMenuOpen(true)} />
           </>
         }
       />
@@ -87,6 +91,13 @@ export default function MainApplicant({ onNavigate }) {
         value="main"
         onChange={(v) => v === 'mypage' && onNavigate?.('mypage')}
       />
+
+      <AppMenuDrawer
+        open={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        onNavigate={onNavigate}
+      />
     </div>
   );
 }
+

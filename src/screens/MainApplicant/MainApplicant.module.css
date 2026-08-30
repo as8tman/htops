@@ -8,6 +8,7 @@
 .content {
   flex: 1 1 auto;
   overflow-y: auto;
+  padding-bottom: calc(var(--spacing-xlarge) + 48px);
 }
 
 .statusCard {
@@ -35,6 +36,18 @@
   cursor: pointer;
   color: rgba(255, 255, 255, 0.7);
   font-family: inherit;
+  transition: color 0.15s ease, opacity 0.15s ease;
+  padding: var(--spacing-xxxsmall);
+  border-radius: var(--radius-small);
+}
+
+.statusLink:hover {
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.statusLink:active {
+  background: rgba(255, 255, 255, 0.16);
 }
 
 .caption {
@@ -63,6 +76,16 @@
   border-radius: var(--radius-large);
   overflow: hidden;
   background: var(--surface-neutral-1);
+  cursor: pointer;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sideJobCard:hover {
+  box-shadow: var(--shadow-medium);
+}
+
+.sideJobCard:hover .sideJobImage {
+  background: var(--surface-neutral-3);
 }
 
 .sideJobImage {
@@ -72,6 +95,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.15s ease;
 }
 
 .placeholderLabel {
@@ -106,10 +130,20 @@
   box-sizing: border-box;
   text-align: left;
   font-family: inherit;
+  transition: background 0.15s ease, box-shadow 0.15s ease;
 }
 
 .eventCard:hover {
   background: var(--surface-neutral-2);
+}
+
+.eventCard:active {
+  background: var(--surface-neutral-3);
+}
+
+.eventCard:hover .eventChevron {
+  transform: translateX(2px);
+  color: var(--text-primary);
 }
 
 .eventText {
@@ -123,4 +157,6 @@
 .eventChevron {
   flex-shrink: 0;
   color: var(--text-body-3);
+  transition: transform 0.15s ease, color 0.15s ease;
 }
+
