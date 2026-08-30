@@ -11,6 +11,7 @@ import {
   Tag,
   Toast,
   Dialog,
+  DatePicker,
 } from './components';
 import './App.css';
 
@@ -20,6 +21,7 @@ const NAV_ITEMS = [
   { id: 'button', label: 'Button' },
   { id: 'textfield', label: 'TextField' },
   { id: 'select', label: 'Select' },
+  { id: 'datepicker', label: 'DatePicker' },
   { id: 'choice', label: 'Checkbox / Radio / Switch' },
   { id: 'badge', label: 'Badge / Tag' },
   { id: 'toast', label: 'Toast' },
@@ -258,6 +260,19 @@ export default function App() {
             <Select label="Disabled" placeholder="비활성" disabled>
               <option value="1">옵션 1</option>
             </Select>
+          </div>
+        </Section>
+
+        <Section id="datepicker" title="DatePicker">
+          <div className="card-grid">
+            <DatePicker label="레이블" defaultValue="2024-06-15" helpText="날짜를 선택하거나 직접 입력하세요" />
+            <DatePicker
+              label="에러"
+              errorText="날짜를 확인해주세요"
+            />
+            <DatePicker label="Disabled" disabled />
+            <DatePicker label="Small" size="small" defaultValue="2024-01-01" />
+            <DatePicker label="xSmall" size="xSmall" defaultValue="2024-12-31" />
           </div>
         </Section>
 
