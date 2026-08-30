@@ -94,3 +94,35 @@
 .small .item:not(:last-child)::after {
   top: 12px;
 }
+
+/* inverted (for dark/colored container backgrounds) */
+.inverted .item::after {
+  background: rgba(255, 255, 255, 0.2);
+}
+.inverted .item.state-done::after {
+  background: var(--surface-primary);
+}
+.inverted .marker {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.5);
+}
+.inverted .label {
+  color: rgba(255, 255, 255, 0.7);
+}
+.inverted .state-active .marker {
+  background: var(--surface-primary);
+  border-color: var(--surface-primary);
+  color: var(--text-body-0);
+}
+.inverted .state-active .label {
+  color: var(--text-body-0);
+}
+.inverted .state-done .marker {
+  background: var(--color-orange-200);
+  border-color: var(--color-orange-400);
+  color: var(--color-orange-700);
+}
+.inverted .state-done .label {
+  color: rgba(255, 255, 255, 0.7);
+}

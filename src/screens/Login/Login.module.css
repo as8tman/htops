@@ -1,0 +1,55 @@
+.screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--surface-neutral);
+}
+
+.content {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 0 var(--spacing-medium) var(--spacing-large);
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: var(--spacing-xsmall) 0 var(--spacing-xxsmall);
+}
+
+.subtitle {
+  margin-bottom: var(--spacing-xxlarge);
+}
+
+.field {
+  margin-bottom: var(--spacing-small);
+}
+
+.loginButton {
+  margin: var(--spacing-small) 0 var(--spacing-medium);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-small);
+}
+
+.linkButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--font-size-body2);
+  color: var(--text-body-2);
+  text-decoration: underline;
+  padding: 0;
+}
+
+.linkDivider {
+  width: 1px;
+  height: 12px;
+  background: var(--border-4);
+  display: inline-block;
+}

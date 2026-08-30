@@ -69,3 +69,10 @@
   background: var(--surface-neutral-2);
   color: var(--text-body-1);
 }
+.ghost {
+  background: transparent;
+  color: var(--text-body-1);
+}
+.ghost:hover:not(.disabled) {
+  background: var(--state-dark-2);
+}

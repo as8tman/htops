@@ -4,13 +4,21 @@ export default function Stepper({
   steps = [],
   current = 0,
   size = 'medium',
+  showLabels = true,
+  inverted = false,
   className,
   ...rest
 }) {
   const sizeClass = styles[size] ?? styles.medium;
 
   return (
-    <ol className={[styles.stepper, sizeClass, className].filter(Boolean).join(' ')} role="list" {...rest}>
+    <ol
+      className={[styles.stepper, sizeClass, inverted ? styles.inverted : '', className]
+        .filter(Boolean)
+        .join(' ')}
+      role="list"
+      {...rest}
+    >
       {steps.map((step, index) => {
         const state = index < current ? 'done' : index === current ? 'active' : 'upcoming';
         return (
@@ -24,7 +32,7 @@ export default function Stepper({
                 index + 1
               )}
             </span>
-            <span className={styles.label}>{step.label ?? step}</span>
+            {showLabels && <span className={styles.label}>{step.label ?? step}</span>}
           </li>
         );
       })}

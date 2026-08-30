@@ -38,6 +38,7 @@ import {
   Texts,
   Feedback,
 } from './components';
+import ScreenApp from './screens/ScreenApp.jsx';
 import './App.css';
 
 const NAV_ITEMS = [
@@ -185,7 +186,7 @@ function Section({ id, title, description, children }) {
   );
 }
 
-export default function App() {
+function ComponentShowcase({ onShowScreens }) {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [scrollDialogOpen, setScrollDialogOpen] = useState(false);
   const [toastVisible, setToastVisible] = useState(true);
@@ -796,7 +797,21 @@ export default function App() {
 
       <footer className="page-footer">
         <p>Copyright ⓒ 한화생명 디지털프로덕트팀. All Rights Reserved.</p>
+        {onShowScreens && (
+          <Button variant="neutral1" size="small" onClick={onShowScreens} style={{ marginTop: 12 }}>
+            H-TOPS 화면 흐름 보기
+          </Button>
+        )}
       </footer>
     </div>
   );
+}
+
+export default function App() {
+  const [mode, setMode] = useState('screens');
+
+  if (mode === 'showcase') {
+    return <ComponentShowcase onShowScreens={() => setMode('screens')} />;
+  }
+  return <ScreenApp onShowShowcase={() => setMode('showcase')} />;
 }

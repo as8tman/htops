@@ -1,0 +1,22 @@
+.screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--surface-neutral);
+}
+
+.content {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: var(--spacing-medium);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+}
+
+.fixedFooter {
+  flex-shrink: 0;
+  padding: var(--spacing-small) var(--spacing-medium);
+  background: var(--surface-neutral);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.06);
+}
