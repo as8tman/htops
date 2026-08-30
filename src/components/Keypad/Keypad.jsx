@@ -1,7 +1,13 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import styles from './Keypad.module.css';
 
 const KEYS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'clear', '0', 'backspace'];
+
+function buildShuffledKeys() {
+  const digits = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+  const shuffled = digits.sort(() => Math.random() - 0.5);
+  return [...shuffled.slice(0, 9), 'clear', shuffled[9], 'backspace'];
+}
 
 export default function Keypad({
   onInput,
@@ -16,12 +22,7 @@ export default function Keypad({
   const [value, setValue] = useState('');
   const display = hidden ? value.replace(/./g, '•') : value;
 
-  let keys = KEYS;
-  if (shuffle) {
-    const digits = ['1','2','3','4','5','6','7','8','9','0'];
-    const shuffled = digits.sort(() => Math.random() - 0.5);
-    keys = [...shuffled.slice(0, 9), 'clear', shuffled[9], 'backspace'];
-  }
+  const keys = useMemo(() => (shuffle ? buildShuffledKeys() : KEYS), [shuffle]);
 
   function handleKey(key) {
     if (disabled) return;

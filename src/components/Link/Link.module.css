@@ -1,0 +1,39 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xxxsmall);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body2);
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.link:hover {
+  opacity: 0.7;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.disabled {
+  color: var(--text-neutral-2);
+  cursor: not-allowed;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+/* colors */
+.primary { color: var(--text-primary); }
+.body { color: var(--text-body); }
+.neutral { color: var(--text-body-2); }
+.textButton { color: var(--text-body-1); font-weight: var(--weight-bold); }
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}

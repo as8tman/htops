@@ -1,0 +1,47 @@
+.indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xxsmall);
+}
+
+.dot {
+  border-radius: var(--radius-full);
+  transition: width 0.2s ease, background-color 0.2s ease;
+}
+
+/* dots variant */
+.dots .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--border-4);
+}
+
+.dots .dot.active {
+  width: 24px;
+  background: var(--surface-primary);
+}
+
+.dots .dot.inactive {
+  background: var(--border-4);
+}
+
+/* pager (numbers) variant */
+.pager .dot {
+  min-width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-caption);
+  font-family: var(--font-family-base);
+}
+
+.pager .dot.active {
+  background: var(--surface-primary);
+  color: var(--text-body-0);
+}
+
+.pager .dot.inactive {
+  background: transparent;
+  color: var(--text-body-3);
+}

@@ -1,0 +1,45 @@
+.tooltip {
+  position: absolute;
+  z-index: 1000;
+  background: var(--surface-secondary);
+  color: var(--text-body-0);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  padding: var(--spacing-xxsmall) var(--spacing-xsmall);
+  border-radius: var(--radius-small);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+/* placements */
+.top {
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bottom {
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.left {
+  right: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+.right {
+  left: calc(100% + 6px);
+  top: 50%;
+  transform: translateY(-50%);
+}

@@ -2,7 +2,6 @@ import { useState, useRef, useEffect, useId } from 'react';
 import styles from './DatePicker.module.css';
 
 const WEEKDAYS = ['일', '월', '화', '수', '목', '금', '토'];
-const MONTHS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 function pad(n) {
   return String(n).padStart(2, '0');

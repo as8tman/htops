@@ -1,0 +1,96 @@
+.stepper {
+  display: flex;
+  align-items: flex-start;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 0;
+  position: relative;
+  text-align: center;
+  gap: var(--spacing-xsmall);
+}
+
+.item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: calc(50% + 16px);
+  right: calc(50% + 16px - 100%);
+  height: 2px;
+  background: var(--border-3);
+  z-index: 0;
+}
+
+.item.state-done:not(:last-child)::after {
+  background: var(--surface-primary);
+}
+
+.marker {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--surface-neutral-1);
+  border: 1px solid var(--border-3);
+  color: var(--text-body-3);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body2);
+  box-sizing: border-box;
+}
+
+.marker svg {
+  width: 18px;
+  height: 18px;
+}
+
+.label {
+  font-size: var(--font-size-caption);
+  color: var(--text-body-3);
+  line-height: var(--line-height-caption);
+  padding: 0 var(--spacing-xxsmall);
+}
+
+/* states */
+.state-active .marker {
+  background: var(--surface-primary);
+  border-color: var(--surface-primary);
+  color: var(--text-body-0);
+  font-weight: var(--weight-bold);
+}
+.state-active .label {
+  color: var(--text-body);
+  font-weight: var(--weight-regular);
+}
+
+.state-done .marker {
+  background: var(--color-orange-200);
+  border-color: var(--color-orange-400);
+  color: var(--color-orange-700);
+}
+.state-done .label {
+  color: var(--text-body-2);
+}
+
+/* sizes */
+.medium {
+}
+.small .marker {
+  width: 24px;
+  height: 24px;
+  font-size: var(--font-size-caption);
+}
+.small .marker svg { width: 14px; height: 14px; }
+.small .item:not(:last-child)::after {
+  top: 12px;
+}

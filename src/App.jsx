@@ -24,6 +24,15 @@ import {
   Accordion,
   Banner,
   Divider,
+  Stepper,
+  BottomNavigation,
+  Tabs,
+  Link,
+  Indicator,
+  BottomSheet,
+  Spinner,
+  Tooltip,
+  ProgressBar,
 } from './components';
 import './App.css';
 
@@ -40,6 +49,15 @@ const NAV_ITEMS = [
   { id: 'accordion', label: 'Accordion' },
   { id: 'banner', label: 'Banner' },
   { id: 'divider', label: 'Divider' },
+  { id: 'stepper', label: 'Stepper' },
+  { id: 'bottomnav', label: 'BottomNavigation' },
+  { id: 'tabs', label: 'Tabs' },
+  { id: 'link', label: 'Link' },
+  { id: 'indicator', label: 'Indicator' },
+  { id: 'bottomsheet', label: 'BottomSheet' },
+  { id: 'spinner', label: 'Spinner' },
+  { id: 'tooltip', label: 'Tooltip' },
+  { id: 'progress', label: 'ProgressBar' },
   { id: 'textfield', label: 'TextField' },
   { id: 'select', label: 'Select' },
   { id: 'datepicker', label: 'DatePicker' },
@@ -127,6 +145,26 @@ const iconStar = (
   </svg>
 );
 
+const iconHome = (
+  <svg viewBox="0 0 20 20" fill="none" width="20" height="20">
+    <path d="M3 9.5 10 3l7 6.5V17a1 1 0 0 1-1 1h-4v-4h-4v4H4a1 1 0 0 1-1-1V9.5z" fill="currentColor" />
+  </svg>
+);
+
+const iconSearchNav = (
+  <svg viewBox="0 0 20 20" fill="none" width="20" height="20">
+    <circle cx="9" cy="9" r="5.5" stroke="currentColor" strokeWidth="1.6" />
+    <path d="M13.5 13.5 17 17" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+  </svg>
+);
+
+const iconUser = (
+  <svg viewBox="0 0 20 20" fill="none" width="20" height="20">
+    <circle cx="10" cy="7" r="3.5" stroke="currentColor" strokeWidth="1.6" />
+    <path d="M3.5 17a6.5 6.5 0 0 1 13 0" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+  </svg>
+);
+
 function Section({ id, title, description, children }) {
   return (
     <section id={id} className="section">
@@ -143,6 +181,7 @@ export default function App() {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [scrollDialogOpen, setScrollDialogOpen] = useState(false);
   const [toastVisible, setToastVisible] = useState(true);
+  const [sheetOpen, setSheetOpen] = useState(false);
 
   return (
     <div className="page">
@@ -354,6 +393,88 @@ export default function App() {
               <Divider />
               <Divider label="구분선" />
             </div>
+          </div>
+        </Section>
+
+        <Section id="stepper" title="Stepper">
+          <div className="choice-card">
+            <Stepper current={2} steps={['신청', '보장내용', '입력', '완료']} />
+          </div>
+        </Section>
+
+        <Section id="bottomnav" title="BottomNavigation">
+          <BottomNavigation
+            defaultValue="홈"
+            items={[
+              { label: '홈', value: '홈', icon: iconHome },
+              { label: '조회', value: '조회', icon: iconSearchNav },
+              { label: '혜택', value: '혜택', icon: iconStar },
+              { label: '내정보', value: '내정보', icon: iconUser },
+            ]}
+          />
+        </Section>
+
+        <Section id="tabs" title="Tabs">
+          <div className="choice-card">
+            <h3>underline</h3>
+            <Tabs defaultValue="1" items={['1', '2', '3', '4']} />
+          </div>
+          <div className="choice-card">
+            <h3>rounded</h3>
+            <Tabs defaultValue="1" variant="rounded" items={['1', '2', '3']} />
+          </div>
+        </Section>
+
+        <Section id="link" title="Link">
+          <div className="inline-row">
+            <Link href="#">기본 링크</Link>
+            <Link href="#" color="body">본문 링크</Link>
+            <Link href="#" underline={false}>밑줄 없는 링크</Link>
+            <Link href="#" disabled>비활성 링크</Link>
+          </div>
+        </Section>
+
+        <Section id="indicator" title="Indicator">
+          <div className="inline-row">
+            <Indicator count={4} current={1} variant="dots" />
+            <Indicator count={4} current={1} variant="pager" />
+          </div>
+        </Section>
+
+        <Section id="bottomsheet" title="BottomSheet">
+          <div className="inline-row">
+            <Button size="small" onClick={() => setSheetOpen(true)}>
+              바텀시트 열기
+            </Button>
+          </div>
+          <BottomSheet open={sheetOpen} onClose={() => setSheetOpen(false)} title="바텀 시트">
+            <p>바텀 시트 내용을 입력해주세요.</p>
+          </BottomSheet>
+        </Section>
+
+        <Section id="spinner" title="Spinner">
+          <div className="inline-row">
+            <Spinner size="small" />
+            <Spinner size="medium" />
+            <Spinner size="large" />
+          </div>
+        </Section>
+
+        <Section id="tooltip" title="Tooltip">
+          <div className="inline-row">
+            <Tooltip content="도움말을 입력해주세요" placement="top">
+              <Button size="small" variant="outlinePrimary">상단 툴팁</Button>
+            </Tooltip>
+            <Tooltip content="오른쪽 툴팁" placement="right">
+              <Button size="small" variant="neutral1">오른쪽 툴팁</Button>
+            </Tooltip>
+          </div>
+        </Section>
+
+        <Section id="progress" title="ProgressBar">
+          <div className="choice-card">
+            <ProgressBar label="진행률" value={60} />
+            <ProgressBar label="완료" value={100} status="success" />
           </div>
         </Section>
 
