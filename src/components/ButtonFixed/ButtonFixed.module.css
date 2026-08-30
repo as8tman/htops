@@ -16,7 +16,7 @@
 
 .button {
   width: 100%;
-  height: var(--spacing-xxlarge);
+  height: 56px;
   border: none;
   border-radius: var(--radius-medium);
   font-family: var(--font-family-base);

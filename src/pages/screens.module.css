@@ -1,0 +1,281 @@
+/* H-TOPS 화면 데모 공통 스타일
+   기존 디자인 시스템 토큰(var(--...))과 컴포넌트를 그대로 사용한다. */
+
+/* ---- 화면 스크롤 프레임 ---- */
+.screen {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;
+  min-height: 0;
+  background: var(--background-0);
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  min-height: 48px;
+  padding: 0 var(--spacing-small);
+  background: var(--surface-neutral);
+}
+
+.topBarSide {
+  display: inline-flex;
+  align-items: center;
+  width: 40px;
+}
+
+.topBarTitle {
+  font-size: var(--font-size-title5);
+  font-weight: var(--weight-bold);
+  color: var(--text-body);
+}
+
+.content {
+  flex: 1 1 0;
+  overflow-y: auto;
+  padding: var(--spacing-small) var(--spacing-medium);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+  background: var(--background-1);
+}
+
+.sectionRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: var(--spacing-small) 0 var(--spacing-xsmall);
+}
+
+.sectionRowTitle {
+  font-size: var(--font-size-subtitle2);
+  font-weight: var(--weight-bold);
+  color: var(--text-body);
+}
+
+.sectionRowTrailing {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text-body-3);
+}
+
+.fixedAction {
+  flex-shrink: 0;
+}
+
+/* ---- iOS 프레임 ---- */
+.frame {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 390px;
+  max-width: 100%;
+  height: 740px;
+  background: var(--background-0);
+  border-radius: 44px;
+  border: 3px solid var(--color-gray-900);
+  overflow: hidden;
+  box-shadow: var(--shadow-large);
+}
+
+/* ---- 메인 카드 ---- */
+.heroCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small);
+  padding: var(--spacing-medium);
+  border-radius: var(--radius-xlarge);
+  color: var(--text-body-0);
+  background:
+    radial-gradient(120% 120% at 100% 0%, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 55%),
+    var(--surface-secondary);
+}
+
+.heroCardTitle {
+  font-size: var(--font-size-body2);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.heroCardValue {
+  font-size: var(--font-size-title2);
+  font-weight: var(--weight-bold);
+}
+
+.heroCardSub {
+  font-size: var(--font-size-caption);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 상단 유틸 헤더 (메인 상단) */
+.mainHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-small) var(--spacing-small) 0;
+  color: var(--text-body);
+}
+
+/* 혜택 배너용 오렌지 카드 */
+.benefitCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-medium);
+  border-radius: var(--radius-xlarge);
+  color: var(--text-body-0);
+  background:
+    radial-gradient(120% 120% at 100% 0%, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0) 55%),
+    var(--surface-primary);
+}
+
+.banners {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xsmall);
+}
+
+/* 프로필 카드 */
+.profileCard {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-small);
+  padding: var(--spacing-medium);
+  border-radius: var(--radius-xlarge);
+  background: var(--surface-neutral);
+  box-shadow: var(--shadow-medium);
+}
+
+.avatar {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  color: var(--text-body-0);
+  background: var(--surface-primary);
+  font-size: var(--font-size-title4);
+  font-weight: var(--weight-bold);
+}
+
+.profileInfo {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profileName {
+  font-size: var(--font-size-title4);
+  font-weight: var(--weight-bold);
+  color: var(--text-body);
+}
+
+.profileMeta {
+  font-size: var(--font-size-caption);
+  color: var(--text-body-3);
+}
+
+/* 단계 카드 (지원 현황) */
+.stageCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-small);
+  padding: var(--spacing-medium);
+  border-radius: var(--radius-xlarge);
+  background: var(--surface-neutral);
+  box-shadow: var(--shadow-medium);
+}
+
+.stageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stageTitle {
+  font-size: var(--font-size-subtitle2);
+  font-weight: var(--weight-bold);
+  color: var(--text-body);
+}
+
+.stageDesc {
+  font-size: var(--font-size-caption);
+  color: var(--text-body-3);
+}
+
+/* 동작 버튼 그룹 (가로 스크롤/그리드) */
+.actionGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-medium);
+}
+
+.action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xxsmall);
+  padding: var(--spacing-small) 0;
+  color: var(--text-body-2);
+}
+
+.actionIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-large);
+  background: var(--surface-neutral-1);
+}
+
+.actionLabel {
+  font-size: var(--font-size-caption);
+  color: var(--text-body-2);
+}
+
+/* 소분류 뱃지 */
+.kicker {
+  display: inline-block;
+  font-size: var(--font-size-caption);
+  font-weight: var(--weight-bold);
+  color: var(--text-primary);
+}
+
+/* 입력/체크 동의 그룹 */
+.termsGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xsmall);
+}
+
+/* 로그인 푸터 라인 */
+.loginFooter {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-small);
+  align-items: center;
+  color: var(--text-body-3);
+  font-size: var(--font-size-caption);
+}
+
+.dividerDot {
+  width: 3px;
+  height: 3px;
+  border-radius: var(--radius-full);
+  background: var(--border-4);
+}
+
+/* 데모 뷰어 */
+.viewer {
+  display: flex;
+  gap: var(--spacing-large);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}

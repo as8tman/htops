@@ -38,6 +38,10 @@ import {
   Texts,
   Feedback,
 } from './components';
+import { ScreensDemo } from './pages';
+import { screenRoutes, usePathname } from './pages/router.jsx';
+import RouteScreen from './pages/RouteScreen.jsx';
+import DemoHeader from './pages/DemoHeader.jsx';
 import './App.css';
 
 const NAV_ITEMS = [
@@ -190,34 +194,40 @@ export default function App() {
   const [scrollDialogOpen, setScrollDialogOpen] = useState(false);
   const [toastVisible, setToastVisible] = useState(true);
   const [sheetOpen, setSheetOpen] = useState(false);
+  const [view, setView] = useState('screens');
+  const pathname = usePathname();
+
+  // /SCR-001 ~ /SCR-006 등으로 접근하면 해당 실화면만 보여준다. (데모 상단 UI 제외)
+  if (screenRoutes[pathname]) {
+    return <RouteScreen pathname={pathname} />;
+  }
 
   return (
     <div className="page">
-      <header className="page-header">
-        <p className="eyebrow">H-TOPS Design System</p>
-        <h1>컴포넌트 데모</h1>
-        <p className="lead">
-          Figma 디자인 시스템에서 추출한 토큰과 핵심 컴포넌트를 확인합니다. 브라우저 폭을
-          줄여 반응형 동작을 확인해보세요.
-        </p>
-      </header>
+      <DemoHeader view={view} onViewChange={setView} />
 
-      <nav className="page-nav">
-        <ul>
-          {NAV_ITEMS.map((item) => (
-            <li key={item.id}>
-              <a href={`#${item.id}`}>{item.label}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      {view === 'components' ? (
+        <nav className="page-nav">
+          <ul>
+            {NAV_ITEMS.map((item) => (
+              <li key={item.id}>
+                <a href={`#${item.id}`}>{item.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      ) : null}
 
       <main className="page-main">
-        <Section
-          id="tokens"
-          title="색상 토큰"
-          description="Figma 변수에서 추출한 semantic 색상과 primary 컬러 스케일입니다."
-        >
+        {view === 'screens' ? (
+          <ScreensDemo />
+        ) : (
+          <>
+          <Section
+            id="tokens"
+            title="색상 토큰"
+            description="Figma 변수에서 추출한 semantic 색상과 primary 컬러 스케일입니다."
+          >
           <div className="token-groups">
             {COLOR_GROUPS.map((group) => (
               <div key={group.title} className="token-group">
@@ -792,6 +802,8 @@ export default function App() {
             ))}
           </Dialog>
         </Section>
+          </>
+        )}
       </main>
 
       <footer className="page-footer">
