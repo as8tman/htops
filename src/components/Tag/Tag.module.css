@@ -1,0 +1,33 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background: var(--additional-custom-1);
+  color: var(--text-body-0);
+  font-size: var(--font-size-caption);
+  font-weight: var(--weight-light);
+  line-height: var(--line-height-caption);
+  white-space: nowrap;
+}
+
+.small.default {
+  height: 26px;
+  padding: 0 6px;
+  border-radius: var(--radius-small);
+}
+.small.rounded {
+  height: 26px;
+  padding: 0 var(--spacing-xxsmall);
+  border-radius: var(--radius-full);
+}
+.xSmall.default {
+  height: 18px;
+  padding: 0 var(--spacing-xxxsmall);
+  border-radius: var(--radius-small);
+}
+.xSmall.rounded {
+  height: 18px;
+  padding: 0 6px;
+  border-radius: var(--radius-full);
+}

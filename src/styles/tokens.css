@@ -1,0 +1,128 @@
+/* H-TOPS Design System — design tokens
+   Extracted from Figma (한화생명_디자인시스템 / H-TOPS 시스템재구축)
+   https://www.figma.com/design/KhvUBxbFTopAgbZRYEOqOj */
+
+:root {
+  /* ---- Primitive color palette ---- */
+  --color-orange-100: #ffe0cc;
+  --color-orange-200: #ffc299;
+  --color-orange-300: #ffaf7f;
+  --color-orange-400: #ff8f4c;
+  --color-orange-500: #fa6600;
+  --color-orange-600: #e15a00;
+  --color-orange-700: #bf4c00;
+  --color-orange-800: #9e3f00;
+  --color-orange-900: #803300;
+
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #f0f0f0;
+  --color-gray-300: #e5e4e3;
+  --color-gray-400: #d0cfce;
+  --color-gray-500: #b4b3b2;
+  --color-gray-700: #7e7c7a;
+  --color-gray-800: #5e5c5a;
+  --color-gray-900: #403f3e;
+
+  --color-white: #ffffff;
+  --color-black: #272b2f;
+
+  --color-red-100: #fee5d8;
+  --color-red-500: #f53f3f;
+  --color-red-700: #b01f38;
+
+  --color-bluegreen-500: #009ca5;
+  --color-deepyellow-500: #f8b62b;
+  --color-indigoblue-400: #819ede;
+
+  /* ---- Semantic: surface ---- */
+  --surface-primary: var(--color-orange-500);
+  --surface-secondary: var(--color-gray-900);
+  --surface-neutral: var(--color-white);
+  --surface-neutral-1: var(--color-gray-100);
+  --surface-neutral-2: var(--color-gray-200);
+  --surface-neutral-3: var(--color-gray-300);
+
+  /* ---- Semantic: text ---- */
+  --text-primary: var(--color-orange-500);
+  --text-primary-1: var(--color-orange-700);
+  --text-body: var(--color-black);
+  --text-body-0: var(--color-white);
+  --text-body-1: var(--color-gray-900);
+  --text-body-2: var(--color-gray-800);
+  --text-body-3: var(--color-gray-700);
+  --text-neutral-1: #908f8e;
+  --text-neutral-2: var(--color-gray-500);
+
+  /* ---- Semantic: border ---- */
+  --border-1: var(--color-gray-100);
+  --border-2: var(--color-gray-200);
+  --border-3: var(--color-gray-300);
+  --border-4: #908f8e;
+  --border-5: var(--color-gray-900);
+
+  /* ---- Semantic: background ---- */
+  --background-0: var(--color-white);
+  --background-1: var(--color-gray-100);
+  --background-dimmed: rgba(0, 0, 0, 0.5);
+
+  /* ---- Semantic: additional / status ---- */
+  --additional-info: var(--color-bluegreen-500);
+  --additional-error: var(--color-red-500);
+  --additional-warning: var(--color-deepyellow-500);
+  --additional-neutral: var(--color-gray-500);
+  --additional-custom-1: var(--color-indigoblue-400);
+  --additional-custom-2: var(--color-orange-400);
+  --additional-custom-3: #facd5f;
+
+  /* ---- Semantic: interaction state overlays ---- */
+  --state-dark-1: rgba(0, 0, 0, 0.02);
+  --state-dark-2: rgba(0, 0, 0, 0.1);
+  --state-dark-3: rgba(0, 0, 0, 0.16);
+  --state-light-1: rgba(255, 255, 255, 0.6);
+
+  /* ---- Typography ---- */
+  --font-family-base: 'HanwhaGothic', 'Pretendard Variable', Pretendard,
+    -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-bold: 700;
+
+  --font-size-title1: 26px;
+  --font-size-title2: 22px;
+  --font-size-title3: 20px;
+  --font-size-title4: 18px;
+  --font-size-title5: 16px;
+  --font-size-subtitle1: 18px;
+  --font-size-subtitle2: 16px;
+  --font-size-subtitle3: 14px;
+  --font-size-body1: 16px;
+  --font-size-body2: 14px;
+  --font-size-caption: 12px;
+
+  --line-height-base: 1.5;
+  --line-height-caption: 1.4;
+
+  /* ---- Spacing scale ---- */
+  --spacing-xxxxsmall: 2px;
+  --spacing-xxxsmall: 4px;
+  --spacing-xxsmall: 8px;
+  --spacing-xsmall: 12px;
+  --spacing-small: 16px;
+  --spacing-medium: 20px;
+  --spacing-large: 24px;
+  --spacing-xlarge: 28px;
+  --spacing-xxlarge: 32px;
+
+  /* ---- Radius ---- */
+  --radius-small: 4px;
+  --radius-medium: 8px;
+  --radius-large: 12px;
+  --radius-xlarge: 16px;
+  --radius-full: 1000px;
+
+  /* ---- Shadow ---- */
+  --shadow-small: 0 5px 8px rgba(0, 0, 0, 0.02);
+  --shadow-medium: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-large: 0 2px 16px rgba(0, 0, 0, 0.1);
+}

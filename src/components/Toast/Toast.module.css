@@ -1,0 +1,50 @@
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-xxsmall);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 400px;
+  padding: var(--spacing-xsmall) var(--spacing-small);
+  border-radius: var(--radius-medium);
+  background: var(--surface-secondary);
+  box-shadow: var(--shadow-large);
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 0.5px;
+}
+
+.icon.success {
+  color: #3ecf8e;
+}
+.icon.error {
+  color: var(--additional-error);
+}
+.icon.warning {
+  color: var(--additional-warning);
+}
+
+.message {
+  flex: 1 1 0;
+  min-width: 0;
+  font-size: var(--font-size-body2);
+  font-weight: var(--weight-light);
+  line-height: var(--line-height-base);
+  color: var(--text-body-0);
+}
+
+.action {
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body2);
+  font-weight: var(--weight-light);
+  color: var(--text-neutral-2);
+  cursor: pointer;
+}
