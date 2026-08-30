@@ -33,6 +33,10 @@ import {
   Spinner,
   Tooltip,
   ProgressBar,
+  Header,
+  Lists,
+  Texts,
+  Feedback,
 } from './components';
 import './App.css';
 
@@ -58,6 +62,10 @@ const NAV_ITEMS = [
   { id: 'spinner', label: 'Spinner' },
   { id: 'tooltip', label: 'Tooltip' },
   { id: 'progress', label: 'ProgressBar' },
+  { id: 'header', label: 'Header' },
+  { id: 'lists', label: 'Lists' },
+  { id: 'texts', label: 'Texts' },
+  { id: 'feedback', label: 'Feedback' },
   { id: 'textfield', label: 'TextField' },
   { id: 'select', label: 'Select' },
   { id: 'datepicker', label: 'DatePicker' },
@@ -475,6 +483,142 @@ export default function App() {
           <div className="choice-card">
             <ProgressBar label="진행률" value={60} />
             <ProgressBar label="완료" value={100} status="success" />
+          </div>
+        </Section>
+
+        <Section
+          id="header"
+          title="Header"
+          description="화면 상단에 사용하는 제목/설명 헤더 컴포넌트입니다."
+        >
+          <div className="control-stack">
+            <div className="choice-card">
+              <Header
+                eyebrow="H-TOPS"
+                title="보험 안내"
+                subtitle="부가설명 텍스트를 입력해주세요"
+                description="상세 설명 텍스트를 입력해주세요. 상세 설명 텍스트를 입력해주세요."
+              />
+            </div>
+            <div className="choice-card">
+              <h3>large / trailing</h3>
+              <Header
+                size="large"
+                title="마이페이지"
+                leading={
+                  <IconButton icon={iconStar} size="small" variant="neutral" />
+                }
+                trailing={
+                  <IconButton icon={iconUser} size="small" variant="outline" />
+                }
+              />
+            </div>
+            <div className="choice-card">
+              <h3>small / align-center</h3>
+              <Header
+                size="small"
+                align="center"
+                title="안내 문구 제목"
+                description="중앙정렬 스몰 헤더입니다. 중앙정렬 스몰 헤더입니다."
+              />
+            </div>
+          </div>
+        </Section>
+
+        <Section
+          id="lists"
+          title="Lists"
+          description="목록을 구성하는 리스트 컴포넌트입니다. plain/grouped/card variant를 지원합니다."
+        >
+          <div className="card-grid">
+            <div>
+              <h3>card + clickable</h3>
+              <Lists
+                variant="card"
+                onClickItem={(item) => console.log('선택:', item.title)}
+                items={[
+                  { title: '계약 조회', leading: iconStar, chevron: true, divider: true },
+                  { title: '보험료 납입', leading: iconStar, chevron: true, divider: true },
+                  { title: '청약 안내', leading: iconStar, chevron: true },
+                ]}
+              />
+            </div>
+            <div>
+              <h3>grouped (subtitle/trailing)</h3>
+              <Lists
+                variant="grouped"
+                items={[
+                  { title: '한화생명', subtitle: '담당자', trailing: '박상무' },
+                  { title: '주소', subtitle: '수령지', trailing: '서울시 강남구' },
+                  { title: '연락처', subtitle: '처리시간', trailing: '평일 9:00-18:00' },
+                ]}
+              />
+            </div>
+            <div>
+              <h3>plain + description</h3>
+              <Lists
+                items={[
+                  { title: '준비물', description: '신분증과 청약서가 필요합니다.', divider: true },
+                  { title: '절차', description: '심사 후 순차적으로 안내합니다.', divider: true },
+                  { title: '문의', description: '고객센터 1588-0000으로 연락주세요.' },
+                ]}
+              />
+            </div>
+          </div>
+        </Section>
+
+        <Section
+          id="texts"
+          title="Texts"
+          description="타이포그래피 스타일을 적용하는 텍스트 컴포넌트입니다."
+        >
+          <div className="card-grid">
+            <div className="choice-card">
+              <Texts variant="title1" weight="bold">title1 heading</Texts>
+              <Texts variant="title3" weight="bold">title3 heading</Texts>
+              <Texts variant="subtitle2">subtitle2 텍스트</Texts>
+              <Texts variant="body2" color="body2">body2 본문 텍스트를 입력해주세요.</Texts>
+              <Texts variant="caption" color="neutral">caption 보조 텍스트</Texts>
+            </div>
+            <div className="choice-card">
+              <h3>weights</h3>
+              <Texts variant="body1" weight="light">weight lighter</Texts>
+              <Texts variant="body1" weight="regular">weight regular</Texts>
+              <Texts variant="body1" weight="bold">weight bold</Texts>
+            </div>
+            <div className="choice-card">
+              <h3>colors</h3>
+              <Texts variant="body2" color="primary">primary 텍스트</Texts>
+              <Texts variant="body2" color="error">error 텍스트</Texts>
+              <Texts variant="body2" color="info">info 텍스트</Texts>
+              <Texts variant="body2" color="body3">body3 텍스트</Texts>
+            </div>
+          </div>
+        </Section>
+
+        <Section
+          id="feedback"
+          title="Feedback"
+          description="화면 내 안내/상태 메시지를 위한 피드백 컴포넌트입니다."
+        >
+          <div className="toast-stack">
+            <Feedback title="확인되었습니다" variant="success">
+              요청하신 정보가 정상적으로 저장되었습니다.
+            </Feedback>
+            <Feedback title="안내" variant="info" onClose={() => {}}>
+              심사가 완료되면 문자로 안내해 드립니다.
+            </Feedback>
+            <Feedback title="주의" variant="warning" action={<Link href="#">자세히 보기</Link>}>
+              상품별 보장 금액이 다를 수 있습니다.
+            </Feedback>
+            <Feedback variant="error">필수 항목을 모두 입력해주세요.</Feedback>
+            <Feedback
+              variant="neutral"
+              icon={false}
+              title="알아두세요"
+            >
+              중립 스타일 피드백 텍스트를 입력해주세요.
+            </Feedback>
           </div>
         </Section>
 

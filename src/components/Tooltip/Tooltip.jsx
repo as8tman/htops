@@ -1,3 +1,4 @@
+import { useState, useRef } from 'react';
 import styles from './Tooltip.module.css';
 
 export default function Tooltip({

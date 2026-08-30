@@ -1,0 +1,105 @@
+.feedback {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-xsmall);
+  padding: var(--spacing-small);
+  border-radius: var(--radius-large);
+  box-sizing: border-box;
+  border: 1px solid transparent;
+}
+
+.icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.content {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--font-size-subtitle2);
+  font-weight: var(--weight-bold);
+  margin: 0 0 2px;
+}
+
+.text {
+  font-size: var(--font-size-body2);
+  color: var(--text-body-2);
+  line-height: var(--line-height-caption);
+}
+
+.action {
+  flex-shrink: 0;
+}
+
+.close {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  color: var(--text-body-3);
+  cursor: pointer;
+  border-radius: var(--radius-small);
+}
+
+.close:hover {
+  background: var(--state-dark-2);
+}
+
+.close svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ---- variants ---- */
+.info {
+  background: var(--color-bluegreen-500);
+  color: var(--text-body-0);
+}
+.info .text { color: rgba(255, 255, 255, 0.9); }
+.info .close { color: rgba(255, 255, 255, 0.85); }
+
+.success {
+  background: var(--color-orange-200);
+  color: var(--text-body);
+}
+.success .icon { color: var(--color-orange-700); }
+.success .text { color: var(--text-body-2); }
+
+.warning {
+  background: var(--additional-warning);
+  color: var(--text-body);
+}
+.warning .icon { color: var(--text-body); }
+.warning .text { color: var(--text-body-1); }
+.warning .close { color: var(--text-body-3); }
+
+.error {
+  background: var(--additional-error);
+  color: var(--text-body-0);
+}
+.error .text { color: rgba(255, 255, 255, 0.9); }
+.error .close { color: rgba(255, 255, 255, 0.85); }
+
+.neutral {
+  background: var(--surface-neutral-1);
+  border-color: var(--border-2);
+  color: var(--text-body);
+}
+.neutral .icon { color: var(--text-body-2); }
+.neutral .text { color: var(--text-body-3); }

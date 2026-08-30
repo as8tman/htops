@@ -30,4 +30,8 @@ export { default as BottomSheet } from './BottomSheet/BottomSheet.jsx';
 export { default as Spinner } from './Spinner/Spinner.jsx';
 export { default as Tooltip } from './Tooltip/Tooltip.jsx';
 export { default as ProgressBar } from './ProgressBar/ProgressBar.jsx';
+export { default as Header } from './Header/Header.jsx';
+export { default as Lists } from './Lists/Lists.jsx';
+export { default as Texts } from './Texts/Texts.jsx';
+export { default as Feedback } from './Feedback/Feedback.jsx';
 
