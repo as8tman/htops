@@ -12,6 +12,18 @@ import {
   Toast,
   Dialog,
   DatePicker,
+  IconButton,
+  TextButton,
+  ButtonGroup,
+  ButtonFixed,
+  Chips,
+  Segment,
+  Search,
+  Keypad,
+  Rating,
+  Accordion,
+  Banner,
+  Divider,
 } from './components';
 import './App.css';
 
@@ -19,6 +31,15 @@ const NAV_ITEMS = [
   { id: 'tokens', label: '토큰' },
   { id: 'typography', label: '타이포그래피' },
   { id: 'button', label: 'Button' },
+  { id: 'button-actions', label: 'Button 계열' },
+  { id: 'chips', label: 'Chips' },
+  { id: 'segment', label: 'Segment' },
+  { id: 'search', label: 'Search' },
+  { id: 'keypad', label: 'Keypad' },
+  { id: 'rating', label: 'Rating' },
+  { id: 'accordion', label: 'Accordion' },
+  { id: 'banner', label: 'Banner' },
+  { id: 'divider', label: 'Divider' },
   { id: 'textfield', label: 'TextField' },
   { id: 'select', label: 'Select' },
   { id: 'datepicker', label: 'DatePicker' },
@@ -96,6 +117,15 @@ const BUTTON_VARIANTS = [
   'outlineSecondary',
   'outlineNeutral',
 ];
+
+const iconStar = (
+  <svg viewBox="0 0 20 20" fill="none" width="20" height="20">
+    <path
+      d="M10 3l2.1 4.26 4.7.68-3.4 3.32.8 4.68L10 13.9l-4.2 2.04.8-4.68-3.4-3.32 4.7-.68L10 3z"
+      fill="currentColor"
+    />
+  </svg>
+);
 
 function Section({ id, title, description, children }) {
   return (
@@ -220,6 +250,110 @@ export default function App() {
                 </div>
               </div>
             ))}
+          </div>
+        </Section>
+
+        <Section id="button-actions" title="Button 계열">
+          <div className="control-stack">
+            <div className="control-row">
+              <span className="control-row-label">IconButton</span>
+              <div className="inline-row">
+                <IconButton icon={iconStar} size="medium" variant="primary" />
+                <IconButton icon={iconStar} size="small" variant="neutral" />
+                <IconButton icon={iconStar} size="small" variant="outline" />
+                <IconButton icon={iconStar} size="small" variant="primary" disabled />
+              </div>
+            </div>
+            <div className="control-row">
+              <span className="control-row-label">TextButton</span>
+              <div className="inline-row">
+                <TextButton size="large">텍스트 버튼</TextButton>
+                <TextButton size="medium">텍스트 버튼</TextButton>
+                <TextButton size="medium" underline>밑줄 버튼</TextButton>
+                <TextButton size="medium" color="neutral">중립</TextButton>
+                <TextButton size="medium" disabled>비활성</TextButton>
+              </div>
+            </div>
+            <div className="control-row">
+              <span className="control-row-label">ButtonGroup</span>
+              <ButtonGroup gap="small">
+                <Button variant="secondary" size="medium">취소</Button>
+                <Button variant="primary" size="medium">확인</Button>
+              </ButtonGroup>
+            </div>
+            <div className="control-row">
+              <span className="control-row-label">ButtonFixed (하단 고정 CTA)</span>
+              <ButtonFixed variant="primary">다음</ButtonFixed>
+            </div>
+          </div>
+        </Section>
+
+        <Section id="chips" title="Chips">
+          <div className="card-grid">
+            <div className="choice-card">
+              <h3>Chips 기본</h3>
+              <Chips options={['전체', '공지', '이벤트', '사용법']} />
+            </div>
+            <div className="choice-card">
+              <h3>Chips 다중 선택</h3>
+              <Chips options={['A', 'B', 'C', 'D']} multiple />
+            </div>
+          </div>
+        </Section>
+
+        <Section id="segment" title="Segment">
+          <div className="card-grid">
+            <div className="choice-card">
+              <h3>Segment</h3>
+              <Segment options={['기본 정보', '보장 내용', '청약 안내']} />
+            </div>
+          </div>
+        </Section>
+
+        <Section id="search" title="Search">
+          <div className="card-grid">
+            <Search placeholder="검색어를 입력하세요" />
+          </div>
+        </Section>
+
+        <Section id="keypad" title="Keypad">
+          <div className="choice-card">
+            <h3>보안 키패드</h3>
+            <Keypad onComplete={(v) => console.log('입력 완료:', v)} />
+          </div>
+        </Section>
+
+        <Section id="rating" title="Rating">
+          <div className="inline-row">
+            <Rating size="medium" />
+            <Rating size="small" defaultValue={3} />
+          </div>
+        </Section>
+
+        <Section id="accordion" title="Accordion">
+          <Accordion
+            items={[
+              { title: '보장 내용 확인', content: '보장 항목에 대한 텍스트를 입력해주세요.' },
+              { title: '청약 안내', content: '청약 시 유의사항에 대한 텍스트를 입력해주세요.' },
+              { title: '고객센터', content: '고객센터 안내 텍스트를 입력해주세요.' },
+            ]}
+          />
+        </Section>
+
+        <Section id="banner" title="Banner">
+          <div className="card-grid">
+            <Banner title="프로모션" variant="primary">이벤트 배너 텍스트를 입력해주세요.</Banner>
+            <Banner title="안내" variant="info" onClose={() => {}}>안내 배너 텍스트를 입력해주세요.</Banner>
+            <Banner title="경고" variant="warning">주의 배너 텍스트를 입력해주세요.</Banner>
+          </div>
+        </Section>
+
+        <Section id="divider" title="Divider">
+          <div className="card-grid">
+            <div>
+              <Divider />
+              <Divider label="구분선" />
+            </div>
           </div>
         </Section>
 

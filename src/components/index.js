@@ -9,4 +9,16 @@ export { default as Tag } from './Tag/Tag.jsx';
 export { default as Toast } from './Toast/Toast.jsx';
 export { default as Dialog } from './Dialog/Dialog.jsx';
 export { default as DatePicker } from './DatePicker/DatePicker.jsx';
+export { default as IconButton } from './IconButton/IconButton.jsx';
+export { default as TextButton } from './TextButton/TextButton.jsx';
+export { default as ButtonGroup } from './ButtonGroup/ButtonGroup.jsx';
+export { default as ButtonFixed } from './ButtonFixed/ButtonFixed.jsx';
+export { default as Chips } from './Chips/Chips.jsx';
+export { default as Segment } from './Segment/Segment.jsx';
+export { default as Search } from './Search/Search.jsx';
+export { default as Keypad } from './Keypad/Keypad.jsx';
+export { default as Rating } from './Rating/Rating.jsx';
+export { default as Accordion } from './Accordion/Accordion.jsx';
+export { default as Banner } from './Banner/Banner.jsx';
+export { default as Divider } from './Divider/Divider.jsx';
 

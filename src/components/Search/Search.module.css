@@ -1,0 +1,78 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: var(--surface-neutral-1);
+  border: 1px solid var(--border-3);
+  border-radius: var(--radius-full);
+  transition: border-color 0.15s ease;
+  box-sizing: border-box;
+}
+
+.wrapper:focus-within {
+  border-color: var(--border-5);
+}
+
+.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.large {
+  height: 56px;
+  padding: 0 var(--spacing-small);
+}
+.medium {
+  height: 48px;
+  padding: 0 var(--spacing-xsmall);
+}
+.small {
+  height: 40px;
+  padding: 0 var(--spacing-xsmall);
+}
+
+.icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--text-body-3);
+  margin-right: var(--spacing-xxsmall);
+}
+
+.input {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-family-base);
+  font-weight: var(--weight-light);
+  font-size: var(--font-size-body1);
+  color: var(--text-body);
+}
+
+.input::placeholder {
+  color: var(--text-neutral-1);
+}
+
+.input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.clear {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.clear svg {
+  width: 20px;
+  height: 20px;
+}

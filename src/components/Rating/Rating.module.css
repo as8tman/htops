@@ -1,0 +1,34 @@
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xxxsmall);
+  color: var(--additional-custom-3);
+}
+
+.medium .star svg { width: 28px; height: 28px; }
+.small .star svg { width: 20px; height: 20px; }
+.large .star svg { width: 36px; height: 36px; }
+
+.star {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.star:hover:not(:disabled) {
+  transform: scale(1.1);
+}
+
+.star:disabled {
+  cursor: default;
+}
+
+.disabled {
+  opacity: 0.5;
+}

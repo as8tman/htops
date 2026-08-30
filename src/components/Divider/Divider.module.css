@@ -1,0 +1,55 @@
+.plain.horizontal {
+  width: 100%;
+}
+
+.plain.vertical {
+  height: 100%;
+  align-self: stretch;
+}
+
+.plain {
+  flex-shrink: 0;
+}
+
+.thickness-thin {
+  background: var(--border-2);
+}
+.thickness-small {
+  height: 1px;
+}
+.thickness-normal {
+  height: 1px;
+}
+.thickness-bold {
+  height: 2px;
+}
+
+.plain.vertical.thickness-small,
+.plain.vertical.thickness-normal {
+  height: auto;
+  width: 1px;
+}
+.plain.vertical.thickness-bold {
+  width: 2px;
+}
+
+.thickness-thin { height: 1px; }
+
+/* label divider */
+.withLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xsmall);
+}
+
+.withLabel .line {
+  flex: 1 1 0;
+  background: var(--border-3);
+}
+
+.label {
+  flex-shrink: 0;
+  font-size: var(--font-size-caption);
+  color: var(--text-body-3);
+  white-space: nowrap;
+}

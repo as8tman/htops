@@ -1,0 +1,25 @@
+.group {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.horizontal {
+  flex-direction: row;
+}
+.vertical {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.fullWidth {
+  display: flex;
+  width: 100%;
+}
+
+/* gaps */
+.gap-xxxsmall { gap: var(--spacing-xxxsmall); }
+.gap-xxsmall { gap: var(--spacing-xxsmall); }
+.gap-xsmall { gap: var(--spacing-xsmall); }
+.gap-small { gap: var(--spacing-small); }
+.gap-medium { gap: var(--spacing-medium); }
