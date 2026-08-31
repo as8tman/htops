@@ -81,8 +81,8 @@
   --state-light-1: rgba(255, 255, 255, 0.6);
 
   /* ---- Typography ---- */
-  --font-family-base: 'HanwhaGothic', 'Pretendard Variable', Pretendard,
-    -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --font-family-base: 'Pretendard Variable', Pretendard, -apple-system,
+    'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
 
   --weight-light: 300;
   --weight-regular: 400;

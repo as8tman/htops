@@ -75,7 +75,7 @@
 .withDivider {
   border-bottom: 1px solid var(--border-2);
 }
-.withDivider:last-child {
+.wrapper:last-child > .withDivider {
   border-bottom: none;
 }
 
